@@ -9,12 +9,14 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.1.6",
-    "@strapi/plugin-users-permissions": "4.1.6",
-    "@strapi/strapi": "4.1.6",
+    "@babel/core": "^7.17.8",
+    "@strapi/plugin-i18n": "4.1.7",
+    "@strapi/plugin-users-permissions": "4.1.7",
+    "@strapi/strapi": "4.1.7",
     "better-sqlite3": "^7.5.0",
+    "react": "18.0.0",
+    "react-dom": "^18.0.0",
     "reading-time": "^1.5.0"
   },
   "author": {
@@ -27,5 +29,14 @@
     "node": ">=12.x.x <=16.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "immer": "9.0.12",
+    "koa": "2.13.4",
+    "qs": "6.10.3",
+    "react-is": "18.0.0",
+    "react-select": "5.2.2",
+    "redux": "4.1.2",
+    "webpack": "5.71.0"
+  }
 }
