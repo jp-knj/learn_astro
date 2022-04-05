@@ -3,9 +3,10 @@
 import '../styles/global.css';
 import '../styles/home.css';
 // Component Imports
-import Tour from '../components/Tour.astro';
-// You can import components from any supported Framework here!
+import BaseLayout from "../layout/BaseLayout.astro"
+import BlogGrid from "../components/BlogGrid.jsx"
 
+// You can import components from any supported Framework here!
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -15,6 +16,8 @@ let title = 'My Astro Site';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
+
+const posts  =  await fetch(`http://localhost:1337/posts`).then(res => res.json())
 ---
 <html lang="en">
 <head>
@@ -41,9 +44,6 @@ let title = 'My Astro Site';
 				<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
 			</div>
 		</header>
-
-		<Tour />
-
 		<!--
 
 		You can also use imported framework components directly in your markup!
@@ -54,7 +54,9 @@ let title = 'My Astro Site';
 		See https://docs.astro.build/core-concepts/component-hydration/ 
 
 		-->
-
+		    <BaseLayout>
+                <BlogGrid posts={posts}/>
+            </BaseLayout>
 	</main>
 </body>
 </html>
